@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EntryDesignConcept.Models;
 
 namespace EntryDesignConcept.Controllers
 {
@@ -14,7 +15,9 @@ namespace EntryDesignConcept.Controllers
         // GET: /Entry/
         public ActionResult Index()
         {
-            return View(db.GetAllActivities);
+            ActivitiesViewModel actv = new ActivitiesViewModel();
+            actv.PositionID = 2;
+            return View(actv);
         }
 
         

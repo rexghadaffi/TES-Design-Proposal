@@ -180,6 +180,7 @@
     <Compile Include="AppContext\SalesOrderContext.cs" />
     <Compile Include="AppContext\TeamContext.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Models\EntryViewModel.cs" />
     <Compile Include="Models\Organization.cs" />
     <Compile Include="AppContext\PositionContext.cs" />
     <Compile Include="AppContext\QueryBuilder.cs" />
@@ -214,7 +215,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\metro-bootstrap.css.map" />
-    <Content Include="Views\Entry\_Activities.cshtml" />
     <Content Include="Views\Organization\Index.cshtml" />
     <Content Include="Views\Organization\Create.cshtml" />
     <Content Include="Views\Organization\Edit.cshtml" />
@@ -224,6 +224,7 @@
     <Content Include="Views\SalesOrder\Index.cshtml" />
     <Content Include="Views\SalesOrder\Create.cshtml" />
     <Content Include="Views\SalesOrder\Edit.cshtml" />
+    <Content Include="Views\Entry\_Activities.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -24,6 +24,32 @@
             </div>
         </div>
 
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Project Manager</label>
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.Manager.ID, (SelectList)ViewBag.Manager, "Select Manager", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Manager.ID)
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Business Unit</label>
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.Organization.ID, (SelectList)ViewBag.BusinessUnit, "Select Business Unit", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Organization.ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Team</label>
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.Team.ID, (SelectList)ViewBag.Team, "Select Team", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Organization.ID)
+            </div>
+        </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
             <div class="col-md-10">

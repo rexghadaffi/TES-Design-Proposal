@@ -1,6 +1,11 @@
-﻿
+﻿@model IEnumerable<EntryDesignConcept.Models.ActivitiesViewModel>
 
 
-
-
-
+@foreach (var item in Model)
+{
+    <div class="form-group text-justify">
+        <a href="#" class="fc-event draggable" data-duration='01:00' data-event='{"title":"@item.Billability.ActivityID.Name"}'>
+            &nbsp; @item.Billability.ActivityID.Name
+        </a>
+    </div>
+}

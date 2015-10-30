@@ -1,21 +1,20 @@
-﻿@model IEnumerable<EntryDesignConcept.Models.Activity>
-
+﻿@model EntryDesignConcept.Models.ActivitiesViewModel
 
 <div class="col-md-2">
     <div class="form-horizontal">
         <div class="form-group">
-            <a href="#">List of Activities</a>
+            <a href="#" style="font-weight:bolder">List of Activities</a>
         </div>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Billability)
         {
-            <div class="form-group text-justify">
-                <a href="#" class="fc-event draggable" data-duration='01:00' data-event='{"title":"@item.Name"}'>
-                    &nbsp; @item.Name
+            <div class="form-group">
+                <a href="#" class="fc-event draggable"  data-duration='01:00' data-event='{"title":"@item.ActivityID.Name", "id":"@item.ID", "billabilityID": "@item.ID"}'>
+                    &nbsp; @item.ActivityID.Name
                 </a>
             </div>
         }
         <div class="form-group">
-            <a href="#">Hours Rendered</a>
+            <a href="#" style="font-weight:bolder">Hours Rendered</a>
         </div>
         <div class="form-group">
             <table class="table table-bordered table-hover table-condensed">
@@ -28,7 +27,7 @@
                     </th>
                 </tr>
                 <tr>
-                    <td> Friday:</td> 
+                    <td> Friday:</td>
                     <td class="text-center"> 1.00 </td>
                 </tr>
                 <tr>
@@ -51,7 +50,7 @@
                     <td> Week Total:</td>
                     <td class="text-center"> 5.00 </td>
                 </tr>
-            </table>                   
+            </table>
         </div>
         <div class="form-group">
             <button class="btn btn-info btn-xs" title="save changes"><span class="fa fa-save"></span></button>
@@ -66,7 +65,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 @section Scripts {
     <script src="~/Scripts/jquery-ui.min.js"></script>
@@ -80,9 +79,23 @@
             $('#calendar').fullCalendar({
                 aspectRatio: 1.8,
                 weekNumbers: true,
-                weekends: false,
                 editable: true,
                 droppable: true,
+                slotDuration: '00:15:00',
+                drop: function (date) {
+                    alert($(this).data('duration'));
+                },
+                eventResizeStop: function (event) {
+                    alert("start:" + event.start + "end:" + event.end);
+                },
+                eventDrop: function (event)
+                {
+                    alert(event.billabilityID);
+                },
+                eventRender: function(event, element) {
+                    $(element).attr('data-toggle', 'tooltip');
+                    $(element).attr('title', 'tooltip 1');
+                },
                 firstDay: 5,
                 minTime: "05:00:00",
                 events: [

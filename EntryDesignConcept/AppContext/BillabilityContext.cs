@@ -76,8 +76,8 @@ namespace EntryDesignConcept.AppContext
         {
             Dictionary<string, object> result = new Dictionary<string, object>();
 
-            result.Add("@positionID", data.PositionID.ID);
             result.Add("@activityID", data.ActivityID.ID);
+            result.Add("@positionID", data.PositionID.ID);           
             result.Add("@billable", data.Billable);
             return result;
         }
